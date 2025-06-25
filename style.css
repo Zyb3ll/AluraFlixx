@@ -1,131 +1,151 @@
 body {
-    font-family: 'Poppins', sans-serif; /* Usando a fonte Poppins */
+    font-family: 'Poppins', sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f0f2f5; /* Um cinza mais suave */
-    color: #333;
+    background: linear-gradient(to right, #fce4ec, #f8bbd0); /* Gradiente rosa claro */
+    color: #4a4a4a; /* Cor de texto mais suave */
 }
 
 header {
-    background-color: #2c3e50; /* Azul escuro */
+    background-color: #ff80ab; /* Rosa mais forte */
     color: #fff;
-    padding: 30px 0;
+    padding: 35px 0;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    margin-bottom: 40px;
+    border-bottom-left-radius: 20px; /* Bordas arredondadas */
+    border-bottom-right-radius: 20px;
 }
 
 header h1 {
+    font-family: 'Dancing Script', cursive; /* Fonte mais fofa */
     margin: 0;
-    font-size: 3em;
-    font-weight: 600; /* Mais negrito */
+    font-size: 3.5em;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2); /* Sombra para o texto */
 }
 
 header p {
-    font-size: 1.2em;
+    font-size: 1.3em;
     opacity: 0.9;
     margin-top: 10px;
 }
 
 main {
-    padding: 20px;
+    padding: 30px;
     max-width: 1200px;
-    margin: 0 auto 40px auto; /* Mais espaço na parte inferior */
+    margin: 0 auto 50px auto;
     background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    border-radius: 15px; /* Bordas mais arredondadas */
+    box-shadow: 0 0 25px rgba(0,0,0,0.15);
 }
 
-.genre-section { /* Renomeado de .genero para .genre-section */
-    margin-bottom: 50px;
+.genre-section {
+    margin-bottom: 60px;
 }
 
 .genre-section h2 {
-    color: #e74c3c; /* Vermelho vibrante */
-    border-bottom: 3px solid #f39c12; /* Laranja para destaque */
-    padding-bottom: 15px;
-    margin-bottom: 30px;
-    font-size: 2.2em;
-    font-weight: 600;
+    font-family: 'Dancing Script', cursive;
+    color: #880e4f; /* Rosa escuro */
+    border-bottom: 3px dashed #f8bbd0; /* Linha tracejada fofa */
+    padding-bottom: 18px;
+    margin-bottom: 35px;
+    font-size: 2.8em;
+    font-weight: 700;
     text-align: center;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
 
 .movie-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
 }
 
 .movie-card {
-    background-color: #fdfdfd;
-    border: 1px solid #eee;
-    border-radius: 10px;
+    background-color: #fffde7; /* Amarelo claro suave */
+    border: 2px solid #ffccbc; /* Borda rosa claro */
+    border-radius: 15px; /* Bordas super arredondadas */
     padding: 25px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Para o botão ficar sempre embaixo */
+    align-items: center; /* Centraliza conteúdo no card */
+    text-align: center;
 }
 
 .movie-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    transform: translateY(-10px) rotate(-2deg); /* Um pequeno movimento divertido */
+    box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+}
+
+.movie-card img.movie-cover {
+    width: 150px; /* Largura fixa da imagem */
+    height: 225px; /* Altura fixa da imagem */
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+    border-radius: 10px; /* Bordas arredondadas para as imagens */
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra para a imagem */
+    border: 3px solid #ffccbc; /* Borda fofa para a imagem */
 }
 
 .movie-card h3 {
-    color: #34495e; /* Azul mais escuro */
+    font-family: 'Poppins', sans-serif;
+    color: #c2185b; /* Rosa escuro */
     margin-top: 0;
-    font-size: 1.6em;
-    margin-bottom: 15px;
+    font-size: 1.8em;
+    margin-bottom: 10px;
 }
 
 .movie-card p {
-    font-size: 1em;
-    color: #555;
+    font-size: 1.05em;
+    color: #666;
     margin-bottom: 20px;
-    flex-grow: 1; /* Faz o parágrafo ocupar o espaço restante */
+    flex-grow: 1;
 }
 
 .movie-card a {
     display: inline-block;
-    background-color: #3498db; /* Azul padrão */
+    background-color: #ff80ab; /* Rosa igual ao header */
     color: #fff;
-    padding: 10px 20px;
-    border-radius: 6px;
+    padding: 12px 25px;
+    border-radius: 25px; /* Botões arredondados tipo "pílula" */
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    align-self: flex-start; /* Alinha o botão à esquerda dentro do flex container */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .movie-card a:hover {
-    background-color: #2980b9; /* Azul mais escuro no hover */
-    transform: translateY(-2px);
+    background-color: #f06292; /* Rosa um pouco mais escuro no hover */
+    transform: translateY(-3px);
 }
 
 footer {
     text-align: center;
-    padding: 25px;
-    background-color: #2c3e50;
-    color: #fff;
-    font-size: 0.9em;
-    box-shadow: 0 -4px 8px rgba(0,0,0,0.2);
+    padding: 30px;
+    background-color: #f8bbd0; /* Rosa mais claro */
+    color: #880e4f; /* Rosa escuro */
+    font-size: 1.1em;
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
     header h1 {
-        font-size: 2.2em;
+        font-size: 2.5em;
     }
 
     .genre-section h2 {
-        font-size: 1.8em;
+        font-size: 2em;
     }
 
     .movie-grid {
-        grid-template-columns: 1fr; /* Uma coluna em telas menores */
+        grid-template-columns: 1fr;
     }
 
     .movie-card {
