@@ -1,143 +1,157 @@
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif; /* Fonte mais séria e legível */
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to right, #fce4ec, #f8bbd0); /* Gradiente rosa claro */
-    color: #4a4a4a; /* Cor de texto mais suave */
+    background-color: #f8f8f8; /* Branco muito suave */
+    color: #333;
+    -webkit-font-smoothing: antialiased; /* Para melhor renderização da fonte */
+    -moz-osx-font-smoothing: grayscale;
 }
 
 header {
-    background-color: #ff80ab; /* Rosa mais forte */
-    color: #fff;
-    padding: 35px 0;
+    background-color: #e0e0e0; /* Cinza claro metálico */
+    color: #333;
+    padding: 40px 0;
     text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    margin-bottom: 40px;
-    border-bottom-left-radius: 20px; /* Bordas arredondadas */
-    border-bottom-right-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin-bottom: 50px;
+    border-bottom: 2px solid #bdbdbd; /* Linha sutil de prata */
 }
 
 header h1 {
-    font-family: 'Dancing Script', cursive; /* Fonte mais fofa */
+    font-family: 'Playfair Display', serif; /* Fonte serifada para títulos sérios */
     margin: 0;
-    font-size: 3.5em;
+    font-size: 3.8em;
     font-weight: 700;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.2); /* Sombra para o texto */
+    color: #212121; /* Quase preto */
+    letter-spacing: -0.02em; /* Ajuste para melhor leitura */
 }
 
 header p {
-    font-size: 1.3em;
-    opacity: 0.9;
-    margin-top: 10px;
+    font-size: 1.4em;
+    opacity: 0.8;
+    margin-top: 15px;
+    font-weight: 300;
 }
 
 main {
     padding: 30px;
     max-width: 1200px;
-    margin: 0 auto 50px auto;
-    background-color: #fff;
-    border-radius: 15px; /* Bordas mais arredondadas */
-    box-shadow: 0 0 25px rgba(0,0,0,0.15);
+    margin: 0 auto 60px auto;
+    background-color: #ffffff; /* Branco puro */
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.08); /* Sombra suave */
 }
 
 .genre-section {
-    margin-bottom: 60px;
+    margin-bottom: 70px;
 }
 
 .genre-section h2 {
-    font-family: 'Dancing Script', cursive;
-    color: #880e4f; /* Rosa escuro */
-    border-bottom: 3px dashed #f8bbd0; /* Linha tracejada fofa */
-    padding-bottom: 18px;
-    margin-bottom: 35px;
-    font-size: 2.8em;
+    font-family: 'Playfair Display', serif;
+    color: #424242; /* Cinza escuro */
+    border-bottom: 1px solid #e0e0e0; /* Linha fina e elegante */
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+    font-size: 2.5em;
     font-weight: 700;
     text-align: center;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.genre-section h2::after { /* Detalhe para a linha */
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #757575; /* Cinza médio para destaque */
+    margin: 10px auto 0;
 }
 
 .movie-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+    gap: 35px;
 }
 
 .movie-card {
-    background-color: #fffde7; /* Amarelo claro suave */
-    border: 2px solid #ffccbc; /* Borda rosa claro */
-    border-radius: 15px; /* Bordas super arredondadas */
-    padding: 25px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    background-color: #fcfcfc; /* Quase branco */
+    border: 1px solid #eeeeee; /* Borda muito suave */
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centraliza conteúdo no card */
+    align-items: center;
     text-align: center;
 }
 
 .movie-card:hover {
-    transform: translateY(-10px) rotate(-2deg); /* Um pequeno movimento divertido */
-    box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    border-color: #bdbdbd; /* Borda mais visível no hover */
 }
 
 .movie-card img.movie-cover {
-    width: 150px; /* Largura fixa da imagem */
-    height: 225px; /* Altura fixa da imagem */
-    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
-    border-radius: 10px; /* Bordas arredondadas para as imagens */
-    margin-bottom: 15px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra para a imagem */
-    border: 3px solid #ffccbc; /* Borda fofa para a imagem */
+    width: 160px; /* Levemente maior */
+    height: 240px; /* Levemente maior */
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    border: 2px solid #e0e0e0; /* Borda discreta para imagem */
 }
 
 .movie-card h3 {
-    font-family: 'Poppins', sans-serif;
-    color: #c2185b; /* Rosa escuro */
+    font-family: 'Playfair Display', serif;
+    color: #424242;
     margin-top: 0;
-    font-size: 1.8em;
-    margin-bottom: 10px;
+    font-size: 1.7em;
+    margin-bottom: 12px;
+    font-weight: 700;
 }
 
 .movie-card p {
-    font-size: 1.05em;
-    color: #666;
-    margin-bottom: 20px;
+    font-size: 1em;
+    color: #616161;
+    margin-bottom: 25px;
     flex-grow: 1;
 }
 
 .movie-card a {
     display: inline-block;
-    background-color: #ff80ab; /* Rosa igual ao header */
-    color: #fff;
-    padding: 12px 25px;
-    border-radius: 25px; /* Botões arredondados tipo "pílula" */
+    background-color: #757575; /* Cinza médio para o botão */
+    color: #ffffff;
+    padding: 12px 28px;
+    border-radius: 6px;
     text-decoration: none;
     font-weight: 600;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .movie-card a:hover {
-    background-color: #f06292; /* Rosa um pouco mais escuro no hover */
-    transform: translateY(-3px);
+    background-color: #5a5a5a; /* Cinza mais escuro no hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
 footer {
     text-align: center;
-    padding: 30px;
-    background-color: #f8bbd0; /* Rosa mais claro */
-    color: #880e4f; /* Rosa escuro */
-    font-size: 1.1em;
-    box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    padding: 35px;
+    background-color: #e0e0e0; /* Mesma cor do header */
+    color: #616161;
+    font-size: 1em;
+    box-shadow: 0 -4px 15px rgba(0,0,0,0.1);
+    border-top: 1px solid #bdbdbd;
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
     header h1 {
-        font-size: 2.5em;
+        font-size: 2.8em;
     }
 
     .genre-section h2 {
@@ -149,6 +163,6 @@ footer {
     }
 
     .movie-card {
-        padding: 20px;
+        padding: 25px;
     }
 }
