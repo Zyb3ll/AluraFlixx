@@ -1,12 +1,12 @@
 :root {
     --color-dark-blue: #0A0A2A;
     --color-deep-purple: #1A0F30;
-    --color-star-gold: #FFD700;
-    --color-silver: #C0C0C0;
-    --color-light-grey: #E0E0E0;
-    --color-text-light: #F8F8F8;
-    --color-button-dark: #333366;
-    --color-button-hover: #444488;
+    --color-star-gold: #D4AF37; /* Dourado mais clássico */
+    --color-silver: #A8A8A8; /* Prata mais evidente */
+    --color-light-grey: #F0F0F0; /* Branco/cinza bem claro */
+    --color-text-dark: #333333;
+    --color-button-dark: #4A4A4A; /* Cinza escuro para botões */
+    --color-button-hover: #606060;
 }
 
 body {
@@ -15,12 +15,13 @@ body {
     margin: 0;
     padding: 0;
     background-color: var(--color-dark-blue);
-    color: var(--color-text-light);
+    color: var(--color-light-grey);
     overflow-x: hidden;
     position: relative;
     min-height: 100vh;
 }
 
+/* Efeito de Estrelas no Fundo */
 .background-stars {
     position: fixed;
     top: 0;
@@ -47,7 +48,7 @@ body {
 
 header {
     background: linear-gradient(135deg, var(--color-deep-purple) 0%, var(--color-dark-blue) 100%);
-    color: var(--color-text-light);
+    color: var(--color-light-grey);
     padding: 60px 0;
     text-align: center;
     box-shadow: 0 8px 30px rgba(0,0,0,0.5);
@@ -95,11 +96,129 @@ main {
     padding: 40px;
     max-width: 1300px;
     margin: 0 auto 80px auto;
-    background: rgba(0,0,0,0.4);
+    background: rgba(255,255,255,0.9); /* Branco semitransparente para o conteúdo principal */
     border-radius: 20px;
-    box-shadow: 0 0 40px rgba(255,255,255,0.1), 0 0 80px rgba(255,215,0,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(0,0,0,0.1), 0 0 80px rgba(212,175,55,0.05);
+    border: 1px solid rgba(0,0,0,0.1);
+    color: var(--color-text-dark); /* Texto escuro no fundo claro */
 }
+
+/* Nova Seção: Citação de Destaque */
+.highlight-quote {
+    text-align: center;
+    margin-bottom: 70px;
+    padding: 30px;
+    background: linear-gradient(135deg, var(--color-light-grey) 0%, var(--color-silver) 100%); /* Fundo prata */
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    position: relative;
+    overflow: hidden;
+    color: var(--color-text-dark); /* Texto escuro */
+}
+
+.highlight-quote blockquote {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 2.2em;
+    font-weight: 700;
+    margin: 0;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+    color: var(--color-dark-blue); /* Texto da citação em azul escuro */
+}
+
+.highlight-quote blockquote::before {
+    content: '“';
+    font-size: 3em;
+    position: absolute;
+    left: -10px;
+    top: -20px;
+    color: rgba(0,0,0,0.1);
+    z-index: 0;
+}
+.highlight-quote blockquote::after {
+    content: '”';
+    font-size: 3em;
+    position: absolute;
+    right: -10px;
+    bottom: -20px;
+    color: rgba(0,0,0,0.1);
+    z-index: 0;
+}
+
+.highlight-quote span {
+    display: block;
+    margin-top: 15px;
+    font-size: 1.1em;
+    font-style: italic;
+    color: var(--color-text-dark);
+}
+
+/* Nova Seção: Filme em Destaque do Dia */
+.daily-feature {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.daily-feature h2 {
+    font-family: 'Cinzel Decorative', serif;
+    color: var(--color-star-gold);
+    border-bottom: 1px dashed rgba(0,0,0,0.2);
+    padding-bottom: 25px;
+    margin-bottom: 40px;
+    font-size: 2.5em;
+    font-weight: 700;
+    text-shadow: 0 0 5px rgba(212,175,55,0.3);
+}
+
+.feature-card {
+    background-color: var(--color-light-grey); /* Branco claro */
+    border: 1px solid var(--color-silver);
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    color: var(--color-text-dark);
+}
+
+.feature-card h3 {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 2.5em;
+    color: var(--color-dark-blue);
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.feature-card p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    color: var(--color-text-dark);
+}
+
+.feature-card a {
+    background-color: var(--color-button-dark);
+    color: var(--color-light-grey);
+    padding: 15px 35px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
+
+.feature-card a:hover {
+    background-color: var(--color-button-hover);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+}
+
 
 .genre-section {
     margin-bottom: 80px;
@@ -109,36 +228,37 @@ main {
 .genre-section h2 {
     font-family: 'Cinzel Decorative', serif;
     color: var(--color-star-gold);
-    border-bottom: 1px dashed rgba(255,255,255,0.2);
+    border-bottom: 1px dashed rgba(0,0,0,0.2);
     padding-bottom: 25px;
     margin-bottom: 50px;
     font-size: 3em;
     font-weight: 700;
     text-align: center;
-    text-shadow: 0 0 10px rgba(255,215,0,0.5);
+    text-shadow: 0 0 10px rgba(212,175,55,0.4);
     position: relative;
 }
 
 .genre-section h2::after {
-    content: '★';
+    content: '';
     display: block;
-    color: var(--color-silver);
-    font-size: 0.7em;
-    margin-top: 15px;
+    width: 60px;
+    height: 3px;
+    background-color: var(--color-silver);
+    margin: 15px auto 0;
 }
 
 .movie-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 40px;
 }
 
 .movie-card {
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.15);
+    background: var(--color-light-grey); /* Branco para os cards */
+    border: 1px solid var(--color-silver);
     border-radius: 15px;
     padding: 30px;
-    box-shadow: 0 5px 25px rgba(0,0,0,0.4);
+    box-shadow: 0 5px 25px rgba(0,0,0,0.2);
     transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
     display: flex;
     flex-direction: column;
@@ -146,49 +266,33 @@ main {
     text-align: center;
     position: relative;
     overflow: hidden;
-    min-height: 250px; /* Garante altura mínima para os cards sem imagem */
-    justify-content: space-between; /* Distribui o espaço dentro do card */
-}
-
-.movie-card::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, transparent 70%);
-    transform: rotate(45deg);
-    transition: opacity 0.5s ease;
-    opacity: 0;
-    z-index: 0;
-}
-
-.movie-card:hover::before {
-    opacity: 1;
+    color: var(--color-text-dark); /* Texto escuro */
 }
 
 .movie-card:hover {
     transform: translateY(-15px) scale(1.03);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.6), 0 0 30px var(--color-star-gold);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4), 0 0 30px rgba(212,175,55,0.2);
     border-color: var(--color-star-gold);
 }
 
-/* Removemos o estilo para .movie-cover, pois a imagem foi removida do HTML */
+/* Removendo estilos de imagem, pois não haverá capas */
+.movie-card img.movie-cover {
+    display: none; /* Esconde completamente o elemento da imagem */
+}
 
 .movie-card h3 {
     font-family: 'Cinzel Decorative', serif;
-    color: var(--color-star-gold);
+    color: var(--color-dark-blue); /* Título em azul escuro */
     margin-top: 0;
     font-size: 2em;
     margin-bottom: 15px;
     font-weight: 700;
-    text-shadow: 0 0 8px rgba(255,215,0,0.5);
+    text-shadow: none; /* Remove a sombra do texto dourada */
 }
 
 .movie-card p {
     font-size: 1.1em;
-    color: var(--color-light-grey);
+    color: var(--color-text-dark); /* Texto em cinza escuro */
     margin-bottom: 30px;
     flex-grow: 1;
     line-height: 1.7;
@@ -197,7 +301,7 @@ main {
 .movie-card a {
     display: inline-block;
     background-color: var(--color-button-dark);
-    color: var(--color-text-light);
+    color: var(--color-light-grey);
     padding: 15px 35px;
     border-radius: 30px;
     text-decoration: none;
@@ -212,7 +316,7 @@ main {
 .movie-card a:hover {
     background-color: var(--color-button-hover);
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.6), 0 0 15px rgba(255,255,255,0.3);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.6);
 }
 
 footer {
@@ -226,6 +330,7 @@ footer {
     letter-spacing: 0.02em;
 }
 
+/* Animações de entrada */
 @keyframes fadeInScale {
     from { opacity: 0; transform: scale(0.9); }
     to { opacity: 1; transform: scale(1); }
@@ -236,6 +341,7 @@ footer {
     to { opacity: 1; transform: translateY(0); }
 }
 
+/* Responsividade Aprimorada */
 @media (max-width: 1024px) {
     header h1 {
         font-size: 3.5em;
@@ -248,6 +354,9 @@ footer {
     }
     .movie-grid {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    .feature-card h3 {
+        font-size: 2em;
     }
 }
 
@@ -270,6 +379,12 @@ footer {
     .movie-card {
         padding: 25px;
     }
+    .highlight-quote blockquote {
+        font-size: 1.8em;
+    }
+    .feature-card h3 {
+        font-size: 1.8em;
+    }
 }
 
 @media (max-width: 480px) {
@@ -291,5 +406,426 @@ footer {
     .movie-card a {
         padding: 10px 20px;
         font-size: 0.9em;
+    }
+    .highlight-quote blockquote {
+        font-size: 1.5em;
+    }
+    .feature-card h3 {
+        font-size: 1.5em;
+    }
+}:root {
+    --color-dark-blue: #0A0A2A;
+    --color-deep-purple: #1A0F30;
+    --color-star-gold: #D4AF37; /* Dourado mais clássico */
+    --color-silver: #A8A8A8; /* Prata mais evidente */
+    --color-light-grey: #F0F0F0; /* Branco/cinza bem claro */
+    --color-text-dark: #333333;
+    --color-button-dark: #4A4A4A; /* Cinza escuro para botões */
+    --color-button-hover: #606060;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-dark-blue);
+    color: var(--color-light-grey);
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+}
+
+/* Efeito de Estrelas no Fundo */
+.background-stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.star {
+    position: absolute;
+    background-color: var(--color-star-gold);
+    border-radius: 50%;
+    opacity: 0;
+    animation: twinkle 5s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0; transform: scale(0.5); }
+    50% { opacity: 1; transform: scale(1); }
+}
+
+header {
+    background: linear-gradient(135deg, var(--color-deep-purple) 0%, var(--color-dark-blue) 100%);
+    color: var(--color-light-grey);
+    padding: 60px 0;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+    margin-bottom: 70px;
+    position: relative;
+    overflow: hidden;
+    animation: fadeInScale 1s ease-out;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top left, rgba(255,255,255,0.05) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+header h1 {
+    font-family: 'Cinzel Decorative', serif;
+    margin: 0;
+    font-size: 4.5em;
+    font-weight: 700;
+    text-shadow: 0 0 15px var(--color-star-gold), 0 0 25px rgba(255,255,255,0.3);
+    letter-spacing: 0.05em;
+    animation: textGlow 2s infinite alternate;
+}
+
+@keyframes textGlow {
+    from { text-shadow: 0 0 15px var(--color-star-gold), 0 0 25px rgba(255,255,255,0.3); }
+    to { text-shadow: 0 0 20px var(--color-star-gold), 0 0 35px rgba(255,255,255,0.5); }
+}
+
+header p {
+    font-size: 1.5em;
+    opacity: 0.8;
+    margin-top: 20px;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+}
+
+main {
+    padding: 40px;
+    max-width: 1300px;
+    margin: 0 auto 80px auto;
+    background: rgba(255,255,255,0.9); /* Branco semitransparente para o conteúdo principal */
+    border-radius: 20px;
+    box-shadow: 0 0 40px rgba(0,0,0,0.1), 0 0 80px rgba(212,175,55,0.05);
+    border: 1px solid rgba(0,0,0,0.1);
+    color: var(--color-text-dark); /* Texto escuro no fundo claro */
+}
+
+/* Nova Seção: Citação de Destaque */
+.highlight-quote {
+    text-align: center;
+    margin-bottom: 70px;
+    padding: 30px;
+    background: linear-gradient(135deg, var(--color-light-grey) 0%, var(--color-silver) 100%); /* Fundo prata */
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    position: relative;
+    overflow: hidden;
+    color: var(--color-text-dark); /* Texto escuro */
+}
+
+.highlight-quote blockquote {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 2.2em;
+    font-weight: 700;
+    margin: 0;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+    color: var(--color-dark-blue); /* Texto da citação em azul escuro */
+}
+
+.highlight-quote blockquote::before {
+    content: '“';
+    font-size: 3em;
+    position: absolute;
+    left: -10px;
+    top: -20px;
+    color: rgba(0,0,0,0.1);
+    z-index: 0;
+}
+.highlight-quote blockquote::after {
+    content: '”';
+    font-size: 3em;
+    position: absolute;
+    right: -10px;
+    bottom: -20px;
+    color: rgba(0,0,0,0.1);
+    z-index: 0;
+}
+
+.highlight-quote span {
+    display: block;
+    margin-top: 15px;
+    font-size: 1.1em;
+    font-style: italic;
+    color: var(--color-text-dark);
+}
+
+/* Nova Seção: Filme em Destaque do Dia */
+.daily-feature {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.daily-feature h2 {
+    font-family: 'Cinzel Decorative', serif;
+    color: var(--color-star-gold);
+    border-bottom: 1px dashed rgba(0,0,0,0.2);
+    padding-bottom: 25px;
+    margin-bottom: 40px;
+    font-size: 2.5em;
+    font-weight: 700;
+    text-shadow: 0 0 5px rgba(212,175,55,0.3);
+}
+
+.feature-card {
+    background-color: var(--color-light-grey); /* Branco claro */
+    border: 1px solid var(--color-silver);
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    color: var(--color-text-dark);
+}
+
+.feature-card h3 {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 2.5em;
+    color: var(--color-dark-blue);
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.feature-card p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    color: var(--color-text-dark);
+}
+
+.feature-card a {
+    background-color: var(--color-button-dark);
+    color: var(--color-light-grey);
+    padding: 15px 35px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
+
+.feature-card a:hover {
+    background-color: var(--color-button-hover);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+}
+
+
+.genre-section {
+    margin-bottom: 80px;
+    animation: slideInUp 1s ease-out;
+}
+
+.genre-section h2 {
+    font-family: 'Cinzel Decorative', serif;
+    color: var(--color-star-gold);
+    border-bottom: 1px dashed rgba(0,0,0,0.2);
+    padding-bottom: 25px;
+    margin-bottom: 50px;
+    font-size: 3em;
+    font-weight: 700;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(212,175,55,0.4);
+    position: relative;
+}
+
+.genre-section h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--color-silver);
+    margin: 15px auto 0;
+}
+
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+}
+
+.movie-card {
+    background: var(--color-light-grey); /* Branco para os cards */
+    border: 1px solid var(--color-silver);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    color: var(--color-text-dark); /* Texto escuro */
+}
+
+.movie-card:hover {
+    transform: translateY(-15px) scale(1.03);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4), 0 0 30px rgba(212,175,55,0.2);
+    border-color: var(--color-star-gold);
+}
+
+/* Removendo estilos de imagem, pois não haverá capas */
+.movie-card img.movie-cover {
+    display: none; /* Esconde completamente o elemento da imagem */
+}
+
+.movie-card h3 {
+    font-family: 'Cinzel Decorative', serif;
+    color: var(--color-dark-blue); /* Título em azul escuro */
+    margin-top: 0;
+    font-size: 2em;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-shadow: none; /* Remove a sombra do texto dourada */
+}
+
+.movie-card p {
+    font-size: 1.1em;
+    color: var(--color-text-dark); /* Texto em cinza escuro */
+    margin-bottom: 30px;
+    flex-grow: 1;
+    line-height: 1.7;
+}
+
+.movie-card a {
+    display: inline-block;
+    background-color: var(--color-button-dark);
+    color: var(--color-light-grey);
+    padding: 15px 35px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+    position: relative;
+    z-index: 1;
+}
+
+.movie-card a:hover {
+    background-color: var(--color-button-hover);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    background: linear-gradient(135deg, var(--color-dark-blue) 0%, var(--color-deep-purple) 100%);
+    color: var(--color-silver);
+    font-size: 1.1em;
+    box-shadow: 0 -8px 30px rgba(0,0,0,0.5);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    letter-spacing: 0.02em;
+}
+
+/* Animações de entrada */
+@keyframes fadeInScale {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideInUp {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsividade Aprimorada */
+@media (max-width: 1024px) {
+    header h1 {
+        font-size: 3.5em;
+    }
+    .genre-section h2 {
+        font-size: 2.5em;
+    }
+    .movie-card h3 {
+        font-size: 1.6em;
+    }
+    .movie-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    .feature-card h3 {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.8em;
+    }
+    header p {
+        font-size: 1.2em;
+    }
+    main {
+        padding: 20px;
+    }
+    .genre-section h2 {
+        font-size: 2em;
+    }
+    .movie-grid {
+        grid-template-columns: 1fr;
+    }
+    .movie-card {
+        padding: 25px;
+    }
+    .highlight-quote blockquote {
+        font-size: 1.8em;
+    }
+    .feature-card h3 {
+        font-size: 1.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2em;
+    }
+    header p {
+        font-size: 1em;
+    }
+    .genre-section h2 {
+        font-size: 1.5em;
+    }
+    .movie-card h3 {
+        font-size: 1.4em;
+    }
+    .movie-card p {
+        font-size: 0.9em;
+    }
+    .movie-card a {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+    .highlight-quote blockquote {
+        font-size: 1.5em;
+    }
+    .feature-card h3 {
+        font-size: 1.5em;
     }
 }
